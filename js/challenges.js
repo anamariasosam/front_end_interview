@@ -37,3 +37,43 @@ Create the next triangle
 for (var i = "#"; i.length < 8 ; i += "#") {
   console.log(i);
 }
+
+// A closure example
+function sumador(x) {
+  return function (y) {
+    return x + y;
+  }
+}
+suma2 = sumador(2);
+console.log(suma2(7));
+
+// add(1,3,4) should equal to 8
+function add(...args) {
+  var sum = 0;
+  for (let value of args) {
+    sum += value;
+  }
+  return sum ;
+}
+
+add(1,3,4);
+
+// Make this work:  [1,2,3,4,5].duplicate();
+// [1,2,3,4,5,1,2,3,4,5]
+Array.prototype.duplicate = function () {
+  return this.concat(this.slice(0));
+};
+
+// Explain Bubbling
+<style>
+  body * {
+    margin: 10px;
+    border: 1px solid pink;
+  }
+</style>
+
+<form onclick="alert('form')">FORM
+  <div onclick="alert('div')">DIV
+    <p onclick="alert('p')">P</p>
+  </div>
+</form>
